@@ -5,7 +5,8 @@ using ParseResult = System.Tuple<Parse_OOP.Expression, int>;
 
 
 namespace Parse_OOP
-{
+{   
+    // калькулятор
     class Program
     {
         public static Dictionary<string, double> constants = new Dictionary<string, double>();
