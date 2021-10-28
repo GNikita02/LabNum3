@@ -3,9 +3,8 @@ using System.Linq;
 using System.Collections.Generic;
 using ParseResult = System.Tuple<Parse_OOP.Expression, int>;
 
-//аниме топ
 namespace Parse_OOP
-{   
+{
     // калькулятор строк
     class Program
     {
@@ -31,7 +30,6 @@ namespace Parse_OOP
 
         static void dictionary()
         {
-
             Console.Clear();
             Console.WriteLine("Введите обозначение новой переменной");
             string key = Console.ReadLine();
@@ -58,7 +56,6 @@ namespace Parse_OOP
                 constants.Add(key, value);
                 Console.WriteLine("Была создана новая константа\nНажмите Enter для продолжения");
             }
-
         }
 
         static void menu()
@@ -100,13 +97,12 @@ namespace Parse_OOP
         //    }
         //}
     }
-    
+
     class Token
     {
-
     }
 
-    class NumberToken : Token 
+    class NumberToken : Token
     {
         public readonly double value;
 
@@ -115,6 +111,7 @@ namespace Parse_OOP
             this.value = value;
         }
     }
+
     class OperatorToken : Token
     {
         public enum OperatorType
@@ -132,6 +129,7 @@ namespace Parse_OOP
             this.type = type;
         }
     }
+
     class ParenthesisToken : Token
     {
         public enum ParenthesisType
@@ -146,20 +144,19 @@ namespace Parse_OOP
         {
             this.type = type;
         }
-
     }
 
-    abstract class Expression 
+    abstract class Expression
     {
         public abstract double Calculate();
     }
 
-    abstract class BinOperation: Expression
+    abstract class BinOperation : Expression
     {
         protected Expression left;
         protected Expression right;
 
-        public BinOperation(Expression left, Expression right) 
+        public BinOperation(Expression left, Expression right)
         {
             this.left = left;
             this.right = right;
@@ -173,17 +170,17 @@ namespace Parse_OOP
         }
 
         protected abstract double OperationCalculate(double leftValue, double rightValue);
-
     }
 
-    class Plus:BinOperation
+    class Plus : BinOperation
     {
-        public Plus(Expression left, Expression right):base(left, right) { }
+        public Plus(Expression left, Expression right) : base(left, right) { }
         protected override double OperationCalculate(double leftValue, double rightValue)
         {
             return (leftValue + rightValue);
         }
     }
+
     class Minus : BinOperation
     {
         public Minus(Expression left, Expression right) : base(left, right) { }
@@ -192,6 +189,7 @@ namespace Parse_OOP
             return (leftValue - rightValue);
         }
     }
+
     class Multiply : BinOperation
     {
         public Multiply(Expression left, Expression right) : base(left, right) { }
@@ -200,6 +198,7 @@ namespace Parse_OOP
             return (leftValue * rightValue);
         }
     }
+
     class Divide : BinOperation
     {
         public Divide(Expression left, Expression right) : base(left, right) { }
@@ -208,6 +207,7 @@ namespace Parse_OOP
             return (leftValue / rightValue);
         }
     }
+
     class Number : Expression
     {
         private readonly double value;
@@ -217,19 +217,17 @@ namespace Parse_OOP
             this.value = value;
         }
 
-        public override double Calculate() 
+        public override double Calculate()
         {
             return value;
         }
-
-
     }
 
     class ExpressionCalculator
     {
         private List<Token> tokens;
         private Expression expression;
-        public ExpressionCalculator(string expr) 
+        public ExpressionCalculator(string expr)
         {
             Tokenize(expr);
             var (operand, end_index2) = PlusMinusRule(0);
@@ -279,7 +277,7 @@ namespace Parse_OOP
                     tokens.Add(new OperatorToken(OperatorToken.OperatorType.MINUS));
                     i++;
                 }
-                else if ( expr[i] == '*')
+                else if (expr[i] == '*')
                 {
                     tokens.Add(new OperatorToken(OperatorToken.OperatorType.MULTIPLY));
                     i++;
@@ -310,7 +308,7 @@ namespace Parse_OOP
             }
         }
 
-        ParseResult NumberRule( int start_index)
+        ParseResult NumberRule(int start_index)
         {
             if (start_index < tokens.Count() && tokens[start_index] is NumberToken)
             {
