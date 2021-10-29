@@ -1,7 +1,6 @@
 ﻿  car_obj.cpp
   Main.cpp
-C:\Users\Nikita\GitTest\LabNum3\ОПИ_Лаба_3\Main.cpp(111,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-C:\Users\Nikita\GitTest\LabNum3\ОПИ_Лаба_3\Main.cpp(278,7): warning C4101: COM_STR: неиспользованная локальная переменная
+D:\Univer\ОПИ\ОПИ_Лаба_3\Main.cpp(102,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\Univer\ОПИ\ОПИ_Лаба_3\Main.cpp(257,7): warning C4101: COM_STR: неиспользованная локальная переменная
   Создание кода...
-  LINK : не найден или не выполнена сборка C:\Users\Nikita\GitTest\LabNum3\ОПИ_Лаба_3\Debug\ОПИ_Лаба_3.exe при последней инкрементной компоновке; выполняется полная компоновка
-  ОПИ_Лаба_3.vcxproj -> C:\Users\Nikita\GitTest\LabNum3\ОПИ_Лаба_3\Debug\ОПИ_Лаба_3.exe
+  ОПИ_Лаба_3.vcxproj -> D:\Univer\ОПИ\ОПИ_Лаба_3\Debug\ОПИ_Лаба_3.exe

@@ -154,6 +154,8 @@ void main()
 
 			car[num].car_mode();
 
+		end:;
+
 			cout << "If you want to check all car press: 0 . Else press enything else." << endl;
 			cin >> num;
 			if (num == 0)
@@ -167,8 +169,6 @@ void main()
 
 			system("pause");
 			system("cls");
-
-		end:;
 		}
 		break;
 	}
@@ -255,6 +255,7 @@ void main()
 				cin >> com;
 				flag = select(com, flag, num);
 			}
+		end2:;
 
 			cout << "If you want to check all car press: 0 . Else press enything else." << endl;
 			cin >> num;
@@ -269,7 +270,6 @@ void main()
 
 			system("pause");
 			system("cls");
-		end2:;
 		}
 		break;
 	}
@@ -412,6 +412,7 @@ void main()
 					  system("pause");
 				}
 			}
+		end3:;
 
 			cout << "If you want to check all car press: 0 . Else press enything else." << endl;
 			cin >> NUM_STR;
@@ -430,7 +431,6 @@ void main()
 
 			system("pause");
 			system("cls");
-		end3:;
 		}
 		break;
 		}
